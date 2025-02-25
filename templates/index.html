@@ -12,6 +12,7 @@
             <li>
                 <a href="{{ article.url }}" target="_blank">{{ article.title }}</a>
                 <p>{{ article.description }}</p>
+                <small>Publicado el: {{ article.publishedAt }}</small>
             </li>
         {% endfor %}
     </ul>
