@@ -5,10 +5,14 @@ import os
 app = Flask(__name__)
 
 def get_news():
-    # Ejemplo: Noticias de NewsAPI
-    url = "https://newsapi.org/v2/everything?q=China&apiKey=e715ff500ac0437db588e82f282c1998"
+    # URL de NewsAPI con parámetros para noticias recientes y ordenadas
+    url = "https://newsapi.org/v2/everything?q=China&sortBy=publishedAt&pageSize=10&apiKey=TU_API_KEY"
     response = requests.get(url)
-    return response.json().get("articles", [])
+    if response.status_code == 200:
+        return response.json().get("articles", [])
+    else:
+        print("Error al obtener noticias:", response.status_code)
+        return []
 
 @app.route("/")
 def index():
