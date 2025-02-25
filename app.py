@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 def get_news():
     # Ejemplo: Noticias de NewsAPI
-    url = "https://newsapi.org/v2/everything?q=China&apiKey=TU_API_KEY"
+    url = "https://newsapi.org/v2/everything?q=China&apiKey=e715ff500ac0437db588e82f282c1998"
     response = requests.get(url)
     return response.json().get("articles", [])
 
