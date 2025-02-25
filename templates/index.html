@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias sobre China</title>
+</head>
+<body>
+    <h1>Noticias sobre China</h1>
+    <ul>
+        {% for article in news %}
+            <li>
+                <a href="{{ article.url }}" target="_blank">{{ article.title }}</a>
+                <p>{{ article.description }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
